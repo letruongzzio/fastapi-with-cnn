@@ -1,4 +1,3 @@
-import torch
 import torch.nn as nn
 from torchvision.models import resnet18
 from config.catdog_cfg import CatDogDataConfig
@@ -27,15 +26,15 @@ class CatDogModel(nn.Module):
     """
     def __init__(self, num_classes: int = CatDogDataConfig.N_CLASSES):
         super(CatDogModel, self).__init__()
-        self.model = resnet18(weights='IMAGENET1K_V1')
-        self.backbone = nn.Sequential(*list(self.model.children())[:-1])
-        for param in self.backbone.parameters():
-            param.requires_grad = False
-        in_features = self.model.fc.in_features
-        self.model.fc = nn.Linear(in_features, num_classes)
-
+        self.model = resnet18(pretrained=True)
+        self.model.fc = nn.Linear(512, num_classes)
+        unfreeze = ['layer4', 'fc']
+        for layer_name, layer in self.model.named_parameters():
+            for name in unfreeze:
+                if name in layer_name:
+                    layer.requires_grad = True
+                    break
+                else:
+                    layer.requires_grad = False
     def forward(self, x):
-        x = self.backbone(x)
-        x = torch.flatten(x, 1)
-        x = self.model.fc(x)
-        return x
+        return self.model(x)

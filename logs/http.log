@@ -1,0 +1,9 @@
+2025-03-04 10:52:22,287 - /home/letruongzzio/fastapi-with-cnn/middleware/http.py - INFO - 127.0.0.1 - "GET / 1.1" 404 0.00s
+2025-03-04 10:52:23,841 - /home/letruongzzio/fastapi-with-cnn/middleware/http.py - INFO - 127.0.0.1 - "GET /favicon.ico 1.1" 404 0.00s
+2025-03-04 10:54:27,671 - /home/letruongzzio/fastapi-with-cnn/middleware/http.py - INFO - 127.0.0.1 - "GET / 1.1" 404 0.00s
+2025-03-04 10:54:36,670 - /home/letruongzzio/fastapi-with-cnn/middleware/http.py - INFO - 127.0.0.1 - "GET /docs 1.1" 200 0.00s
+2025-03-04 10:54:37,043 - /home/letruongzzio/fastapi-with-cnn/middleware/http.py - INFO - 127.0.0.1 - "GET /openapi.json 1.1" 200 0.00s
+2025-03-04 11:03:39,313 - /home/letruongzzio/fastapi-with-cnn/middleware/http.py - INFO - 127.0.0.1 - "GET / 1.1" 404 0.00s
+2025-03-04 11:03:42,601 - /home/letruongzzio/fastapi-with-cnn/middleware/http.py - INFO - 127.0.0.1 - "GET /docs 1.1" 200 0.00s
+2025-03-04 11:03:42,753 - /home/letruongzzio/fastapi-with-cnn/middleware/http.py - INFO - 127.0.0.1 - "GET /openapi.json 1.1" 200 0.00s
+2025-03-04 11:03:52,935 - /home/letruongzzio/fastapi-with-cnn/middleware/http.py - INFO - 127.0.0.1 - "POST /catdog_classification/predict 1.1" 200 0.35s
